@@ -5,7 +5,9 @@ define([
   'marionette',
   'helpers/handlebars<%= delimiter %>helpers',
   '<%= controllerPath %>',
-], function (Backbone, Marionette, helpers, <%= controllerName %>) {
+  'helpers/validation',
+  'backbone.validation'
+], function (Backbone, Marionette, helpers, <%= controllerName %>, configureValidation) {
   var dummyData = [{
     'text': 'This is just a sample text',
     'author': 'Sample',
@@ -14,6 +16,7 @@ define([
   }];
 
   helpers.initialize();
+  configureValidation();
 
   describe('<%= controllerName %>', function () {
     beforeEach(function () {<% if (testFramework === 'mocha') { %>
@@ -52,10 +55,10 @@ define([
       expect(this.region.$el.find('form')).<%=assert.tobeok%>;
     });
 
-    it('create method should react to create click', function() {
+    it('create method should not react to create click since validation is false', function() {
       this.controller.create();
       this.region.$el.find('button.create').trigger('click');
-      expect(this.spy.<%=assert.callcount%>).<%=assert.toequal%>(1);
+      expect(this.spy.<%=assert.callcount%>).<%=assert.toequal%>(0);
     });
 
     it('detail method should render view', function() {

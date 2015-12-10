@@ -1,9 +1,12 @@
 import Backbone from 'backbone';
 import helpers from 'helpers/handlebars<%= delimiter %>helpers';
 import <%= detailItemViewName %> from '<%= detailItemViewPath %>';
+import configureValidation from 'helpers/validation';
+import 'backbone.validation';
 
 describe('<%= detailItemViewName %>', function() {
   helpers.initialize();
+  configureValidation();
 
   beforeEach(() => {
     this.date = Date.now();

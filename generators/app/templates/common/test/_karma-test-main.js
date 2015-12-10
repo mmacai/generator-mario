@@ -32,6 +32,7 @@ require.config({
     marionette: '../bower_components/backbone.marionette/lib/backbone.marionette',
     handlebars: '../bower_components/handlebars/handlebars.runtime',
     i18n: '../bower_components/i18next/i18next.amd',
+    'backbone.validation': '../bower_components/backbone.validation/dist/backbone-validation-amd',
     templates: '../../.tmp/scripts/templates'
   },
 

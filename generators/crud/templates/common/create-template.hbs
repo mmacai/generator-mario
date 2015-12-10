@@ -3,14 +3,44 @@
   <form name="model" class="form-horizontal">
     <div class="form-group">
       <label for="text" class="control-label">{{t "crud.text.label"}}</label>
-      <textarea id="text" name="text" type="text" class="text form-control"
-        placeholder="{{t "crud.text.placeholder"}}"></textarea>
+      <textarea id="text" name="text" class="text form-control"
+        placeholder="{{t "crud.text.placeholder"}}">{{text}}</textarea>
+        <span class="label label-danger">{{#if validation.text}}{{t "crud.text.label"}} {{/if}}{{validation.text}}</span>
     </div>
 
     <div class="form-group">
       <label for="author" class="control-label">{{t "crud.author.label"}}</label>
       <input id="author" name="author" type="text"
-        class="form-control" placeholder="{{t "crud.author.placeholder"}}" />
+        class="form-control" placeholder="{{t "crud.author.placeholder"}}" value="{{author}}"/>
+        <span class="label label-danger">{{#if validation.author}}{{t "crud.author.label"}} {{/if}}{{validation.author}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="control-label">{{t "crud.email.label"}}</label>
+        <input id="email" name="email" type="text"
+               class="form-control" placeholder="{{t "crud.email.placeholder"}}" value="{{email}}"/>
+        <span class="label label-danger">{{#if validation.email}}{{t "crud.errorMessages.email"}} {{/if}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="difficulty" class="control-label">{{t "crud.difficulty.label"}}</label>
+        <input id="difficulty" name="difficulty" type="text"
+               class="form-control" placeholder="{{t "crud.difficulty.placeholder"}}"  value="{{difficulty}}"/>
+        <span class="label label-danger">{{#if validation.difficulty}}{{t "crud.difficulty.label"}} {{/if}}{{validation.difficulty}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="dateStart" class="control-label">{{t "crud.dateStart.label"}}</label>
+        <input id="dateStart" name="dateStart" type="date"
+               value="{{dateStart}}" class="form-control" />
+        <span class="label label-danger">{{#if validation.dateStart}}{{t "crud.dateStart.label"}} {{/if}}{{validation.dateStart}}</span>
+    </div>
+
+    <div class="form-group">
+        <label for="dateEnd" class="control-label">{{t "crud.dateEnd.label"}}</label>
+        <input id="dateEnd" name="dateEnd" type="date"
+               value="{{dateEnd}}" class="form-control" />
+        <span class="label label-danger">{{#if validation.dateEnd}}{{t "crud.dateEnd.label"}} {{/if}}{{validation.dateEnd}}</span>
     </div>
 
     <div class="form-group">
@@ -26,7 +56,7 @@
     </div>
 
     <div class="form-group">
-      <button class="create btn btn-primary">{{t "crud.save"}}</button>
+      <button class="create btn btn-primary {{#if validation}} disabled {{/if}}">{{t "crud.save"}}</button>
     </div>
   </form>
 </section>

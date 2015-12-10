@@ -1,9 +1,12 @@
 import Backbone from 'backbone';
 import helpers from 'helpers/handlebars<%= delimiter %>helpers';
 import <%= createItemViewName %> from '<%= createItemViewPath %>';
+import configureValidation from 'helpers/validation';
+import 'backbone.validation';
 
 describe('<%= createItemViewName %>', function() {
   helpers.initialize();
+  configureValidation();
 
   beforeEach(() => {
     this.date = Date.now();

@@ -18,11 +18,35 @@
             "label": "Autor",
             "placeholder": "Setzen Sie Ihren Namen hier ..."
         },
+        "email": {
+            "label": "Email",
+            "placeholder": "Setzen Sie Ihren Email hier ..."
+        },
+        "difficulty": {
+            "label": "Schwierigkeit",
+            "placeholder": "Setzen Sie Ihren Schwierigkeit hier ..."
+        },
+        "dateStart": {
+            "label": "Anfangsdatum"
+        },
+        "dateEnd": {
+            "label": "Angebotsende"
+        },
         "created": {
             "label": "erstellt am"
         },
         "published": {
             "label": "veröffentlicht"
+        },
+        "errorMessages": {
+            "isRequired": "ist erforderlich",
+            "inRange": "muß zwischen __min__ und __max__",
+            "dateBeforeToday": "kann nicht in die Zukunft gesetzt werden",
+            "dateBeforeStart": "muss nach Starttermin festgelegt werden",
+            "dateNotSpecified": "Bedürfnissen Startdatum",
+            "email": "Email muss gültig Form haben (z.B. mail@example.com)",
+            "minLength": "muss mindestens __numberOfCharacters__ Zeichen haben",
+            "authorPattern": "kann nicht Zeichen enthalten __pattern__"
         }
     }
 }

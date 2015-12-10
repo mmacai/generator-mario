@@ -18,11 +18,35 @@
             "label": "Author",
             "placeholder": "Put your name here ..."
         },
+        "email": {
+            "label": "Email",
+            "placeholder": "Put your Email here ..."
+        },
+        "difficulty": {
+            "label": "Difficulty",
+            "placeholder": "Put Difficulty here ..."
+        },
+        "dateStart": {
+            "label": "Starting date"
+        },
+        "dateEnd": {
+            "label": "Ending date"
+        },
         "created": {
             "label": "Created at"
         },
         "published": {
             "label": "Is published"
+        },
+        "errorMessages": {
+            "isRequired": "is required",
+            "inRange": "must be between __min__ and __max__",
+            "dateBeforeToday": "can not be set in the future",
+            "dateBeforeStart": "must be set after start date",
+            "dateNotSpecified": "needs start date",
+            "email": "Email must have valid form (e.g. mail@example.com)",
+            "minLength": "must have at least __numberOfCharacters__ characters",
+            "authorPattern": "can not include characters __pattern__"
         }
     }
 }

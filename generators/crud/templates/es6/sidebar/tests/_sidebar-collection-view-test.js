@@ -1,6 +1,5 @@
 import {Collection} from 'backbone';
 import helpers from 'helpers/handlebars<%= delimiter %>helpers';
-import {Collection} from 'backbone';
 import SidebarCollectionView from 'apps/sidebar/sidebar<%= delimiter %>collection<%= delimiter %>view';
 
 describe('SidebarCollectionView view', function() {

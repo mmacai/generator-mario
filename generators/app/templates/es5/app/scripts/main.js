@@ -30,6 +30,14 @@ require.config({
             deps: [
                 'backbone'
             ]
+        },
+        'backbone.validation': {
+          deps: [
+            'jquery',
+            'underscore',
+            'backbone'
+          ],
+          exports: 'Backbone.Validation'
         }
     },
     paths: {
@@ -43,18 +51,22 @@ require.config({
         radio: '../bower_components/backbone.radio/build/backbone.radio',
         fastclick: '../bower_components/fastclick-amd/fastclick',
         i18n: '../bower_components/i18next/i18next.amd',
-        'lil-uuid': '../bower_components/lil-uuid/uuid'
+        'lil-uuid': '../bower_components/lil-uuid/uuid',
+        'backbone.validation': '../bower_components/backbone.validation/dist/backbone-validation-amd'
     }
 });
 
 require([
   'i18n',
   'helpers/configure',
+  'helpers/validation',
   'app',
-  'bootstrap'
-], function(i18n, configureApp, App) {
+  'bootstrap',
+  'backbone.validation'
+], function(i18n, configureApp, configureValidation, App) {
     configureApp(function() {
-      i18n.init({fallbackLng: 'en', debug:true}, function() {
+      i18n.init({fallbackLng: 'en', debug:true}, function(err, t) {
+        configureValidation(t);
         App.start();
       });
     });

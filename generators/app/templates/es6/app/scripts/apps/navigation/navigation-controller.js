@@ -2,6 +2,7 @@ import {Object as Obj} from 'marionette';
 import NavigationItemView from './navigation<%= delimiter %>composite<%= delimiter %>view';
 import NavigationCollection from './navigation<%= delimiter %>collection';
 import i18n from 'i18n';
+import configureValidation from '../../helpers/validation';
 
 export default Obj.extend({
   initialize(options) {
@@ -13,7 +14,8 @@ export default Obj.extend({
        collection.fetch();
        let view = new NavigationItemView({collection: collection});
        view.listenTo(view, 'childview:language:click', (data) => {
-         i18n.setLng(data.model.get('key'), () => {
+         i18n.setLng(data.model.get('key'), (err, t) => {
+           configureValidation(t);
            Backbone.history.loadUrl(Backbone.history.fragment);
            view.render();
          });

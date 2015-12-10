@@ -2,6 +2,8 @@ import {Collection, history} from 'backbone';
 import {Region} from 'marionette';
 import helpers from 'helpers/handlebars<%= delimiter %>helpers';
 import <%= controllerName %> from '<%= controllerPath %>';
+import configureValidation from 'helpers/validation';
+import 'backbone.validation';
 
 const dummyData = [{
   'text': 'This is just a sample text',
@@ -12,6 +14,7 @@ const dummyData = [{
 
 describe('<%= controllerName %>', function() {
   helpers.initialize();
+  configureValidation();
 
   beforeEach(() => {<% if (testFramework === 'mocha') { %>
     this.stub = sinon.stub(Collection.prototype, 'fetch')
@@ -50,10 +53,10 @@ describe('<%= controllerName %>', function() {
     expect(this.region.$el.find('form')).<%=assert.tobeok%>;
   });
 
-  it('create method should react to create click', () => {
+  it('create method should not react to create click since validation is false', () => {
     this.controller.create();
     this.region.$el.find('button.create').trigger('click');
-    expect(this.spy.<%=assert.callcount%>).<%=assert.toequal%>(1);
+    expect(this.spy.<%=assert.callcount%>).<%=assert.toequal%>(0);
   });
 
   it('detail method should render view', () => {

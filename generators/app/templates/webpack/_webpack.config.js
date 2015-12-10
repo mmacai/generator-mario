@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     app: 'main.js',
-    vendor: ['jquery', 'backbone', 'underscore', 'bootstrap', 'handlebars', 'marionette', 'radio', 'fastclick']
+    vendor: ['jquery', 'backbone', 'underscore', 'bootstrap', 'handlebars', 'marionette', 'radio', 'fastclick', 'i18n', 'lil-uuid', 'backbone.validation']
   },
   output: {
     path: 'dist/scripts',
@@ -26,7 +26,8 @@ module.exports = {
       'i18n': 'i18next/i18next.amd.js',
       'fastclick': 'fastclick-amd/fastclick.js',
       'radio': 'backbone.radio/build/backbone.radio.js',
-      'lil-uuid':'lil-uuid/uuid'
+      'lil-uuid':'lil-uuid/uuid',
+      'backbone.validation': 'backbone.validation/dist/backbone-validation-amd.js'
     }
   },
   module: {

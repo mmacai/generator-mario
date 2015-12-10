@@ -5,10 +5,13 @@ define([
   'underscore',
   'backbone',
   'helpers/handlebars<%= delimiter %>helpers',
-  '<%= createItemViewPath %>'
-], function ($, _, Backbone, helpers, <%= createItemViewName %>) {
+  '<%= createItemViewPath %>',
+  'helpers/validation',
+  'backbone.validation'
+], function ($, _, Backbone, helpers, <%= createItemViewName %>, configureValidation) {
 
   helpers.initialize();
+  configureValidation();
 
   describe('<%= createItemViewName %>', function () {
     beforeEach(function () {
