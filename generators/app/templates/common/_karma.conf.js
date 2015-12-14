@@ -29,8 +29,9 @@ module.exports = function (config) {
             {pattern: 'app/bower_components/backbone/backbone.js', included: false},
             {pattern: 'app/bower_components/backbone.radio/build/backbone.radio.js', included: false},
             {pattern: 'app/bower_components/backbone.marionette/lib/backbone.marionette.js', included: false},
-            {pattern: 'app/bower_components/handlebars/handlebars.runtime.js', included: false},
-            {pattern: 'app/bower_components/bootstrap/dist/js/bootstrap.min.js', included: false},
+            {pattern: 'app/bower_components/handlebars/handlebars.runtime.js', included: false},<% if(styles === 'less') { %>
+            {pattern: 'app/bower_components/bootstrap/dist/js/bootstrap.min.js', included: false},<% } else { %>
+            {pattern: 'app/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', included: false},<% } %>
             {pattern: 'app/bower_components/i18next/i18next.amd.js', included: false},
             {pattern: 'app/bower_components/backbone.validation/dist/backbone-validation-amd.js', included: false},
             'app/bower_components/modernizr/modernizr.js',

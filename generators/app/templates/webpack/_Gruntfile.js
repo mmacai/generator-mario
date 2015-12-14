@@ -206,6 +206,9 @@ module.exports = function (grunt) {
               dest: 'dist/'
             }],
             options: {
+              processContentExclude: [
+                '<%%= yeoman.app %>/favicon.ico'
+              ],
               process: function(content, srcPath) {
                 if (srcPath !== 'environment.json') {
                   return content;

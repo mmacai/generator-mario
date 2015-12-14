@@ -17,7 +17,7 @@ export default function configureValidation(t) {
       }
     },
     dateBeforeStart: function (value, attr, customValue, model) {
-      var startDate = model.get('dateStart');
+      var startDate = model.get(customValue[0].dateStartId);
 
       if (value) {
         if (startDate) {

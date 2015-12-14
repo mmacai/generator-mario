@@ -46,10 +46,10 @@ export default Model.extend({
       required: true,
       msg: function() { return i18n.t('crud.errorMessages.isRequired'); }
     }, {
-      dateBeforeToday: {msg: 'crud.errorMessages.dateBeforeToday'}
+      dateBeforeToday: { msg: 'crud.errorMessages.dateBeforeToday' }
     }, {
       dateBeforeStart: [
-        { msg: 'crud.errorMessages.dateBeforeStart' },
+        { msg: 'crud.errorMessages.dateBeforeStart', dateStartId: 'dateStart' },
         { msg: 'crud.errorMessages.dateNotSpecified' }
       ]
     }]

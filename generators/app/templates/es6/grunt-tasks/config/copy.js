@@ -16,7 +16,8 @@ module.exports = function(grunt) {
                     'jsondata/*.*',
                     'images/*.*',
                     'bower_components/font-awesome/fonts/{,*/}*.*',
-                    'bower_components/modernizr/modernizr.js'
+                    'bower_components/modernizr/modernizr.js',
+                    'locales/**/*'
                 ]
             },
             {
@@ -24,6 +25,9 @@ module.exports = function(grunt) {
       				dest: 'dist/'
       			}],
             options: {
+              processContentExclude: [
+                '<%= yeoman.app %>/favicon.ico'
+              ],
       				process: function(content, srcPath) {
       					if(srcPath !== 'environment.json') {
       						return content;
